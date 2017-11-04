@@ -32,12 +32,34 @@ AppAsset::register($this);
         'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'navbar-default navbar-fixed-top',
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => '分类管理',
+            'items'=>[
+                [
+                    'label'=>'显示分类',
+                    'url'=>'/article/cateindex'
+                ],
+                [
+                    'label'=>'添加分类',
+                    'url'=>'/article/cateadd'
+                ]
+            ]],
+        ['label' => '文章管理', 'items'=>[
+            [
+                'label'=>'显示文章',
+                'url'=>'/article/index'
+            ],
+            [
+                'label'=>'添加文章',
+                'url'=>'/article/add'
+            ]
+        ]],
+
     ];
+
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
