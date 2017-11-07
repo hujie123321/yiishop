@@ -36,7 +36,18 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label' => '分类管理',
+        ['label' => '商品分类管理',
+            'items'=>[
+                [
+                    'label'=>'显示分类',
+                    'url'=>'/goods-category/index'
+                ],
+                [
+                    'label'=>'添加分类',
+                    'url'=>'/goods-category/add'
+                ]
+            ]],
+        ['label' => '文章分类管理',
             'items'=>[
                 [
                     'label'=>'显示分类',
